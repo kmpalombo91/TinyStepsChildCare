@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+<!-- Page Content -->
+<div class="container">
+  <app-content></app-content>
+  <h2 style="text-align: center;" class="font-weight-light">DAILY SCHEDULER</h2>
+  <ejs-schedule width='100%' height='550px' currentView="Week" [selectedDate]="selectedDate">
+    <e-views>
+      <e-view option='Day' [interval]="viewInterval" displayName='2 Days' startHour='09:30' endHour='18:00' [timeScale]="timeScaleOptions"></e-view>
+      <e-view option='Week' [interval]="viewInterval" displayName='2 Weeks' [showWeekend]="showWeekend" [isSelected]="isSelected"></e-view>
+    </e-views>
+  </ejs-schedule>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

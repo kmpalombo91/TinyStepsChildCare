@@ -1,0 +1,140 @@
+<app-nav></app-nav>
+<!-- Page Content -->
+<div class="container">
+  <app-content></app-content>
+  <h2 style="text-align: center;" class="font-weight-light">
+    DAILY BEHAVIOR LOG
+  </h2>
+  <p class="lead">Morning</p>
+
+  <div class="input-group my-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        😀
+        <input
+          type="radio"
+          value="Satisfactory"
+          (click)="setRadio('Satisfactory')"
+          ngModel
+          aria-label="Radio button for following text input"
+        />
+      </div>
+      <div class="input-group-text">
+        😐
+        <input
+          type="radio"
+          value="Neutral"
+          (click)="setRadio('Neutral')"
+          ngModel
+          aria-label="Radio button for following text input"
+        />
+      </div>
+      <div class="input-group-text">
+        🙁
+        <input
+          type="radio"
+          value="Unsatisfactory"
+          (click)="setRadio('Unsatisfactory')"
+          ngModel
+          aria-label="Radio button for following text input"
+        />
+      </div>
+    </div>
+    <input
+      type="text"
+      [(ngModel)]="mComments"
+      placeholder="Comments"
+      class="form-control"
+      aria-label="Text input with radio button"
+    />
+  </div>
+
+  <p class="lead">Afternoon</p>
+
+  <div class="input-group my-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        😀
+        <input
+          type="radio"
+          value="Satisfactory"
+          (click)="setARadio('Satisfactory')"
+          ngModel
+          aria-label="Radio button for following text input"
+        />
+      </div>
+      <div class="input-group-text">
+        😐
+        <input
+          type="radio"
+          value="Fair"
+          (click)="setARadio('Fair')"
+          ngModel
+          aria-label="Radio button for following text input"
+        />
+      </div>
+      <div class="input-group-text">
+        🙁
+        <input
+          type="radio"
+          value="Unsatisfactory"
+          (click)="setARadio('Unsatisfactory')"
+          ngModel
+          aria-label="Radio button for following text input"
+        />
+      </div>
+    </div>
+    <input
+      type="text"
+      [(ngModel)]="aComments"
+      placeholder="Comments"
+      class="form-control"
+      aria-label="Text input with radio button"
+    />
+  </div>
+
+  <div class="card bg-secondary my-3 py-3 text-center">
+    <div class="card-body">
+      <div *ngIf="onSubmit('Satisfactory')">
+        <p class="text-white m-0">
+          Your child's behavior this morning was Satisfactory.
+        </p>
+      </div>
+      <div *ngIf="onSubmit('Neutral')">
+        <p class="text-white m-0">
+          Your child's behavior this morning was Fair.
+        </p>
+      </div>
+      <div *ngIf="onSubmit('Unsatisfactory')">
+        <p class="text-white m-0">
+          Your child's behavior this morning was Unsatisfactory.
+        </p>
+      </div>
+      Comments:
+      <p class="text-white m-0">{{mComments}}</p>
+    </div>
+  </div>
+  <div class="card bg-secondary my-3 py-3 text-center">
+    <div class="card-body">
+      <div *ngIf="onASubmit('Satisfactory')">
+        <p class="text-white m-0">
+          Your child's behavior this afternoon was Satisfactory.
+        </p>
+      </div>
+      <div *ngIf="onASubmit('Fair')">
+        <p class="text-white m-0">
+          Your child's behavior this afternoon was Fair.
+        </p>
+      </div>
+      <div *ngIf="onASubmit('Unsatisfactory')">
+        <p class="text-white m-0">
+          Your child's behavior this afternoon was Unsatisfactory.
+        </p>
+      </div>
+      Comments:
+      <p class="text-white m-0">{{aComments}}</p>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<app-footer></app-footer>

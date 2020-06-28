@@ -1,0 +1,14 @@
+<app-nav></app-nav>
+<!-- Page Content -->
+<div class="container">
+  <app-content></app-content>
+  <h2 style="text-align: center;" class="font-weight-light">CALENDAR</h2>
+  <ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate">
+    <e-views>
+      <e-view option='MonthAgenda' [showWeekend]="showWeekend" [workDays]="workDays"></e-view>
+    </e-views>
+  </ejs-schedule>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>
